@@ -15,12 +15,30 @@
                 top: 50%;
                 left: 50%;
                 transform: translateX(-50%) translateY(-50%);
+                text-align: center;
+                font-weight: bold;
+                font-style: italic;
+                color: white;
             }
         </style>
+        <script>
+            window.onload = function() {
+                var est = new Date('2004-10-19T14:57:30Z');
+                var today = new Date();
+                var years = today.getFullYear() - est.getFullYear();
+                est.setFullYear(today.getFullYear());
+                if (today < est) {
+                    years -= 1;
+                }
+
+                document.getElementById("t").innerHTML = "Celebrating " + years + " years!";
+            }
+        </script>
     </head>
     <body>
         <div>
-            <img src="brian.gif" alt="Brian" />
+            <img src="brian.gif" alt="Brian">
+            <p id="t"><noscript>est. 2004</noscript></p>
         </div>
     </body>
 </html>
